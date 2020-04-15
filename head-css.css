@@ -19,7 +19,8 @@ body, input, textarea, select, button {
 }
 .noselect, no-select, .tippy, 
 .minus-plus-btn, .q-icon, .info-icon, 
-.switch-buttons-holder, .uc-menu-item, .msg-count, .filter-text-btn, .filter-text, .action-select, 
+.switch-buttons-holder, .uc-menu-item, .msg-count, 
+.filter-text-btn, .filter-text, .action-select, 
 .drop-scroll-wrap, .add-to-btn, .option-btn-l, .option-btn-s, 
 .mini-center-dropdown-toggle, 
 .button-s1, .button-s2, .button-s3, .button-s4, .button-s5, .button-std, .button-p, .button-p-inline {
