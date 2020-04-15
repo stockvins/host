@@ -1,3 +1,5 @@
-# STOCKVINS PLATFORM
+#
+
+STOCKVINS
 
 support@stockvins.com
