@@ -1,3 +1,283 @@
-body test {
-  color: initial;
-}  
+/* Core Adjustments */
+
+body {
+    font-family: Ubuntu, Tahoma, Verdana, 
+        "SF Pro HK", "SF Pro TC", "SF Pro SC",
+        "SF Pro Display", "SF Pro Text", "SF Pro Icons", 
+        "Segoe UI", SegoeUI, 
+        "Microsoft JhengHei", 微軟正黑體, 
+        "Microsoft YaHei", 微软雅黑, 
+        "PingFang HK", "PingFang TC", "PingFang SC", 
+        "SF Pro JP", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", 
+        "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body, input, textarea, select, button {
+    font-synthesis: none;
+    -moz-font-feature-settings: 'kern';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.noselect, no-select, .tippy, .minus-plus-btn, .q-icon, .info-icon, 
+.switch-buttons-holder, .uc-menu-item, .msg-count, .filter-text-btn, .filter-text, .action-select, 
+.drop-scroll-wrap, .add-to-btn, .option-btn-l, .option-btn-s, 
+.mini-center-dropdown-toggle, 
+.button-s1, .button-s2, .button-s3, .button-s4, .button-s5, .button-std, .button-p, .button-p-inline {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer or Edge */
+            user-select: none; /* Non-prefixed, Chrome and Opera */
+}
+input, textarea, select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+select {
+    -webkit-border-radius: 0px;
+}
+.no-pe, .page-bg, .bg-image, .overlay-full, 
+.arrow-drop, .expand-icon {
+    pointer-events: none;
+}
+
+/* No Scrollbar */
+
+.drop-scroll-wrap {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.no-sbar::-webkit-scrollbar, .drop-scroll-wrap::-webkit-scrollbar {
+    display: none;
+}
+.no-sbar, .drop-scroll-wrap {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Remove Number Input Spinners */
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Anchor Offset */
+
+.jump:before {
+    content: "";
+    display: block;
+    padding-top: 90px;
+    margin-top: -90px;
+    pointer-events: none;
+}
+
+/* CSS Checkbox as Switch */
+
+.switch {
+  --uiSwitchSize: var(--switchSize, 50px);
+  --uiSwitchBgColor: var(--switchBgColor, #ddd);
+  --uiSwitchBgColorActive: var(--switchBgColorActive, #4ed164);
+  --uiSwitchBorderColorActive: var(--switchBorderColorActive, #fff);
+  --uiSwitchBorderColorFocus: var(--switchBgColorFocus, #43b556);
+  --uiSwitchButtonBgColor: var(--switchButtonBgColor, #fff);  
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.switch__label {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.switch__toggle {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.switch__toggle:focus ~ .switch__label {
+  box-shadow: 0 0 0 var(--uiSwitchThickFocus, 4px) var(--uiSwitchBorderColorFocus);
+}
+.switch__toggle:checked:focus ~ .switch__label {
+  box-shadow: 0 0 0 var(--uiSwitchThickFocus, 4px) var(--uiSwitchBorderColorActive);
+}
+.switch__label:before, .switch__label:after {
+  content: "";
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.switch__label:before {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: var(--uiSwitchBgColor);
+}
+.switch__label:after {
+  top: 50%;
+  z-index: 3;
+  transition: transform .4s cubic-bezier(0.44,-0.12, 0.07, 1.15);
+}
+.switch_type2 {
+  --uiSwitchIndent: var(--switchIndent, 4px);
+  --uiSwitchBorderRadius: var(--switchBorderRadius, 200px);
+  width: var(--uiSwitchSize);
+  height: calc((var(--uiSwitchSize) / 2));
+  border-radius: var(--uiSwitchBorderRadius);    
+  background-color: var(--uiSwitchBgColorActive);
+}
+.switch_type2 .switch__label {
+  border-radius: var(--uiSwitchBorderRadius);    
+}
+.switch_type2 .switch__label:before {
+  border-radius: var(--uiSwitchBorderRadius);    
+  transition: opacity .2s ease-out .1s, transform .1s ease-out .1s;
+  transform: scale(1);
+  opacity: 1;  
+}
+.switch_type2 .switch__toggle:checked ~ .switch__label:before {
+  transform: scale(0);
+  opacity: 0;
+}
+.switch_type2 .switch__toggle ~ .switch__label:after {
+  width: calc((var(--uiSwitchSize) / 2) - calc(var(--uiSwitchIndent) * 2));
+  height: calc((var(--uiSwitchSize) / 2) - calc(var(--uiSwitchIndent) * 2));
+  transform: translate3d(var(--uiSwitchIndent), -50%, 0);
+  background-color: var(--uiSwitchButtonBgColor);
+  border-radius: 100%;
+}
+.switch_type2 .switch__toggle:checked ~ .switch__label:after {
+  transform: translate3d(calc(var(--uiSwitchSize) - calc((var(--uiSwitchSize) / 2) - calc(var(--uiSwitchIndent) * 2)) - var(--uiSwitchIndent)), -50%, 0);
+}
+
+/* CSS Radio */
+
+label {
+  font-weight: 400;
+}
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  display: inline-block;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: #90004c;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+/* CSS Checkbox */
+
+/* The check-container */
+.check-container {
+  display: block;
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* Hide browser default checkbox */
+.check-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #ffffff;
+}
+/* On mouse-over, add background color */
+.check-container:hover input ~ .checkmark {
+  background-color: rgba(144, 0, 76, 0.08);
+}
+/* When the checkbox is checked, add background */
+.check-container input:checked ~ .checkmark {
+  background-color: #90004c;
+}
+/* Create the checkmark or indicator, hidden when not checked */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* Show the checkmark when checked */
+.check-container input:checked ~ .checkmark:after {
+  display: block;
+}
+/* Style the checkmark or indicator */
+.check-container .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #ffffff;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* TG Table Formatting */
+
+.tg {border-collapse:collapse;border-spacing:0;border:none;border-color:#ccc;margin:0px auto;width:100%;}
+.tg td {padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+.tg th {padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+.tg .tg-center {text-align:center;vertical-align:top}
+.tg .tg-right {text-align:right;vertical-align:top}
+.tg .tg-left {text-align:left;vertical-align:top}
