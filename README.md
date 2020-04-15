@@ -1,1 +1,3 @@
-# platfrom
+# STOCKVINS PLATFORM
+
+support@stockvins.com
