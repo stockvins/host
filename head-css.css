@@ -19,8 +19,7 @@ body, input, textarea, select, button {
 }
 .noselect, no-select, .tippy, 
 .minus-plus-btn, .q-icon, .info-icon, 
-.switch-buttons-holder, .uc-menu-item, .msg-count, 
-.filter-text-btn, .filter-text, .action-select, 
+.switch-buttons-holder, .uc-menu-item, .msg-count, .filter-text-btn, .filter-text, .action-select, 
 .drop-scroll-wrap, .add-to-btn, .option-btn-l, .option-btn-s, 
 .mini-center-dropdown-toggle, 
 .button-s1, .button-s2, .button-s3, .button-s4, .button-s5, .button-std, .button-p, .button-p-inline {
@@ -42,6 +41,21 @@ select {
 .no-pe, .page-bg, .bg-image, .overlay-full, 
 .arrow-drop, .expand-icon {
     pointer-events: none;
+}
+.sc-text::before {
+    background-image: url(https://assets.website-files.com/5b97cefed269010baf0abcd5/5efeeaae28e8d17596fc2e59_sc-warning-rc.svg);
+    background-size: contain;
+  	background-repeat: no-repeat;
+  	width: 20px;
+  	height: 18px;
+    display: inline-block;
+    margin-right: 3px;
+    position: relative;
+    bottom: -4px;
+    content:"";
+}
+.search-history {
+  display: none;
 }
 
 /* No Scrollbar */
@@ -186,7 +200,7 @@ label {
   top: 0;
   width: 18px;
   height: 18px;
-  border: 1px solid #ddd;
+  border: 1px solid #90004c;
   border-radius: 100%;
   background: #fff;
 }
@@ -220,7 +234,7 @@ label {
 .check-container {
   display: block;
   position: relative;
-  padding-left: 28px;
+  /* padding-left: 28px; */
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -240,9 +254,10 @@ label {
   position: absolute;
   top: 0;
   left: 0;
-  height: 20px;
-  width: 20px;
+  height: 22px;
+  width: 22px;
   background-color: #ffffff;
+  border: 1px solid #90004c;
 }
 /* On mouse-over, add background color */
 .check-container:hover input ~ .checkmark {
@@ -265,14 +280,25 @@ label {
 /* Style the checkmark or indicator */
 .check-container .checkmark:after {
   left: 6px;
-  top: 2px;
-  width: 5px;
-  height: 10px;
-  border: solid #ffffff;
+  top: 1px;
+  width: 6px;
+  height: 11px;
+  border: solid #fff;
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+.custom-checkbox label {
+  margin: 0 0 0 0;
+}
+/* Style disabled checkmark */
+.check-container input[type=checkbox][disabled], 
+.check-container input:disabled, 
+.check-container .checkmark.check-disabled {
+  cursor: default !important;
+  background-color: #eee !important;
+  border: 1px solid #ccc !important;
 }
 
 /* TG Table Formatting */
@@ -283,3 +309,22 @@ label {
 .tg .tg-center {text-align:center;vertical-align:top}
 .tg .tg-right {text-align:right;vertical-align:top}
 .tg .tg-left {text-align:left;vertical-align:top}
+
+/* Preload Media */
+
+.preload-media {
+  background: 
+    url("https://assets.stockvins.com/host/platform/files/close-cross-w-ss.svg") no-repeat -9999px -9999px, 
+    url("https://www.stockvins.com/static/images/sv-gradient.png") no-repeat -9999px -9999px, 
+    url("https://assets.stockvins.com/host/platform/files/custom-checkbox-checkmark.svg") no-repeat -9999px -9999px, 
+    url("https://assets.stockvins.com/host/platform/files/link-open-new-w-ss.svg") no-repeat -9999px -9999px;
+}
+.mini-center-dropdown-toggle.avatar.w--open {
+  background-image: 
+    url("https://assets.stockvins.com/host/platform/files/close-cross-w-ss.svg"), 
+    url("https://www.stockvins.com/static/images/sv-gradient.png") !important;
+}
+.checkbox.w--redirected-checked {
+  background-image: 
+    url("https://assets.stockvins.com/host/platform/files/custom-checkbox-checkmark.svg") !important;
+}
