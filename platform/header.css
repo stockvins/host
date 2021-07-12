@@ -43,7 +43,7 @@ select {
     pointer-events: none;
 }
 .sc-text::before {
-    background-image: url(https://assets.website-files.com/5b97cefed269010baf0abcd5/5efeeaae28e8d17596fc2e59_sc-warning-rc.svg);
+    background-image: url(https://assets-global.website-files.com/5fbb9d76da2197061d07b175/60ec36fb2e9d9a199eb5b699_sc-warning-rc.svg);
     background-size: contain;
   	background-repeat: no-repeat;
   	width: 20px;
